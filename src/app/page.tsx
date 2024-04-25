@@ -81,22 +81,21 @@ return (
       <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
     </div>
     <div className="mx-auto max-w-[700px] py-32 sm:py-48 lg:py-56">
-      <div className='text-center'>
+    <div className='text-center'>
+  <h2 className="text-4xl mb-7 font-bold tracking-tight text-gray-900 sm:text-6xl">
+    Parse your event logs as behavior coordinates:
+  </h2>
+</div>
 
-      <h1 className="text-4xl mb-5 font-bold tracking-tight text-gray-900 sm:text-6xl">Parse your event logs as behavior coordinates:</h1>
-      </div>
-
-      <div className="sm:mb-8 sm:flex sm:justify-center">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <textarea
-            className="textarea textarea-bordered resize-none min-w-[600px] max-w-[700px] min-h-[50px] max-h-[300px] overflow-hidden relative rounded-md px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-            placeholder="Write something..."
-            value={prompt}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-            // Disable browser default "Enter" behavior for textarea
-            onKeyPress={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
-        />
+<div className="mb-8 flex justify-center"> {/* Use flex and justify-center for all screen sizes */}
+  <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center"> {/* Add items-center to center all children */}
+    <textarea
+      className="textarea textarea-bordered resize-none min-w-[80vw] sm:min-w-[500px] md:min-w-[600px] lg:min-w-[800px] min-h-[50px] max-h-[300px] overflow-hidden relative rounded-md px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 w-full" // Ensure full width within the form
+      placeholder="Write something..."
+      value={prompt}
+      onKeyDown={handleKeyDown}
+      onKeyPress={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
+    />
         <button
         type="submit"
         className={`max-w-2xl rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}

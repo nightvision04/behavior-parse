@@ -5,7 +5,8 @@ FROM base as deps
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN ci --ignore-scripts
+
+# Add a ci step here in future
 
 # Rebuild source as needed
 FROM base as builder 

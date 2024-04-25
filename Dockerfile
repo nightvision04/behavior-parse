@@ -25,6 +25,9 @@ ENV NODE_ENV production
 # Create a group and user for running the application
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
+
+RUN apt-get update && apt-get install -y curl
+
 # Prepare directory structures and permissions
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -39,5 +42,5 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 # Health check to make sure the container is ready to handle requests
 HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
-# Start the Next.js application
-CMD ["node", "server.js"]
+# Start the Next.js application using Next.js's built-in server
+CMD ["next", "start"]

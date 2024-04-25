@@ -8,7 +8,7 @@ export async function POST(req: Request) {
         const openai = getOpenAIInstance();
 
         const stream = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
+            model: "gpt-4-turbo",
             messages: [
                 { 
                     "role": "system", 

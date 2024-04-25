@@ -91,7 +91,7 @@ return (
   <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center"> {/* Add items-center to center all children */}
     <textarea
       className="textarea textarea-bordered resize-none min-w-[80vw] sm:min-w-[500px] md:min-w-[600px] lg:min-w-[800px] min-h-[50px] max-h-[300px] overflow-hidden relative rounded-md px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 w-full" // Ensure full width within the form
-      placeholder="Write something..."
+      placeholder="Paste a persona log. (e.g.'Tom created a new project then added 12 test takers 15 mins later.')"
       value={prompt}
       onChange={handleChange}
       onKeyDown={handleKeyDown}

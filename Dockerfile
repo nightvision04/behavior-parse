@@ -12,7 +12,7 @@ COPY package.json package-lock.json ./
 FROM base as builder 
 
 WORKDIR /app 
-COPY --from=deps /app/node_modeules ./node_modules
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1

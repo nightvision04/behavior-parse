@@ -38,5 +38,7 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
 
+CMD ["node" ,"server.js"]
+
 
 

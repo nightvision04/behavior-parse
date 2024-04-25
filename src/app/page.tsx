@@ -3,7 +3,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import '../app/globals.css'
+import React from 'react';
+import "./globals.css";
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');

@@ -28,7 +28,8 @@ RUN adduser --system --uid 1001 nextjs
 # Prepare directory structures and permissions
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/next.config.mjs ./
+COPY --from=builder /app/postcss.config.mjs ./
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/node_modules ./node_modules
 RUN mkdir /app/tmp && chown nextjs:nodejs /app/tmp

@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
         const stream = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: prompt }],
+            messages: [{ role: "system", content: 'You must answer in json responses only' },{ role: "user", content: prompt }],
             stream: true,
         });
 
